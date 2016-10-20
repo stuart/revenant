@@ -1,0 +1,308 @@
+Trying 45.32.242.174...
+Connected to 45.32.242.174.vultr.com.
+Escape character is '^]'.
+Please enter password:
+1329896
+Logon successful.
+
+
+
+*** Connected with 7DTD server.
+*** Server version: Alpha 15 (b104) Compatibility Version: Alpha 15
+*** Dedicated server only build
+
+Server IP:   Any
+Server port: 25010
+Max players: 8
+Game mode:   GameModeSurvivalMP
+World:       Random Gen
+Game name:   NewClearDawn
+Difficulty:  3
+
+Press 'help' to get a list of all commands. Press 'exit' to end session.
+
+help
+2016-10-05T20:40:10 6546.931 INF Executing command 'help' by Telnet from 59.167.155.186:55970
+*** Generic Console Help ***
+To get further help on a specific topic or command type (without the brackets)
+    help <topic / command>
+
+Generic notation of command parameters:
+   <param name>              Required parameter
+   <entityId / player name>  Possible types of parameter values
+   [param name]              Optional parameter
+
+*** List of Help Topics ***
+None yet
+
+*** List of Commands ***
+ admin => Manage user permission levels
+ aiddebug => Toggles AIDirector debug output.
+ audio => Watch audio stats
+ ban => Manage ban entries
+ buff => Applies a buff to the local player
+ buffplayer => Apply a buff to a player
+ chunkcache cc => shows all loaded chunks in cache
+ commandpermission cp => Manage command permission levels
+ creativemenu cm => enables/disables the creativemenu
+ DeathScreen => Display DeathScreen
+ debuff => Removes a buff from the local player
+ debuffplayer => Remove a buff from a player
+ debugmenu dm => enables/disables the debugmenu
+ debugweather => Dumps internal weather state to the console.
+ enablerendering => enable/disable live map rendering
+ enablescope es => toggle debug scope
+ exhausted => Makes the player exhausted.
+ exportitemicons => Exports all ItemIcons
+ getgamepref gg => Gets game preferences
+ getgamestat ggs => Gets game stats
+ gettime gt => Get the current game time
+ give  => give an item to a player (entity id or name)
+ givequest => usage: givequest questname
+ giveself => usage: give itemName qualityLevel (default quality is 600)
+ giveselfskillxp => usage: giveselfskillxp Mining Tools 10000
+ giveselfxp => usage: giveselfxp 10000
+ givexp => give XP to the skill of a player
+ help => Help on console and specific commands
+ kick => Kicks user with optional reason. "kick playername reason"
+ kickall => Kicks all users with optional reason. "kickall reason"
+ kill => Kill a given entity
+ killall => Kill all players
+ lgo listgameobjects => List all active game objects
+ lights => Debug views to optimize lights
+ listents le => lists all entities
+ listitems li => lists all items that contain the given substring
+ listknownplayers lkp => lists all players that were ever online
+ listlandprotection llp => lists all land protection blocks and owners
+ listplayerbed lpb => list bed locations of all players or a specific player
+ listplayerfriends lpf => list friends of a single player or all players
+ listplayerids lpi => Lists all players with their IDs for ingame commands
+ listplayers lp => lists all players
+ listthreads lt => lists all threads
+ loggamestate lgs => Log the current state of the game
+ loglevel => Telnet/Web only: Select which types of log messages are shown
+ mem => Prints memory information and calls garbage collector
+ memcl => Prints memory information on client and calls garbage collector
+ muteplayerchat mpc => mute a player on public chat
+ physics py => Enable / Disable Physics on blocks that you are placing/removing
+ playerchatmaxlength pcml => set the maximum number of characters a player can write in a single message
+ pplist => Lists all PersistentPlayer data
+ reloadwebpermissions => force reload of web permissions file
+ removelandprotection rlp => removes the association of a land protection block to the owner
+ removequest => usage: removequest questname
+ rendermap => render the current map to a file
+ repairchunkdensity rcd => check and optionally fix densities of a chunk
+ reply re => send a message to  the player who last sent you a PM
+ saveworld sa => Saves the world manually.
+ say => Sends a message to all connected clients
+ sayplayer pm => send a message to a single player
+ sayplayer2 pm2 => send a message to a single player with a specific sender name
+ setgamepref sg => sets a game pref
+ setgamestat sgs => sets a game stat
+ settempunit stu => Set the current temperature units.
+ settime st => Set the current game time
+ showalbedo albedo => enables/disables display of albedo in gBuffer
+ showchunkdata sc => shows some date of the current chunk
+ showClouds => Artist command to show one layer of clouds.
+ showinventory si => list inventory of a given player
+ shownexthordetime => Displays the wandering horde time
+ shownormals norms => enables/disables display of normal maps in gBuffer
+ showspecular spec => enables/disables display of specular values in gBuffer
+ shutdown => shuts down the game
+ sounddebug => Toggles SoundManager debug output.
+ spawnairdrop => Spawns an air drop
+ spawnentity se => spawns an entity
+ spawnhorde sh => spawn horde near a player or coordinate
+ spawnmultipleentity sme => spawn multiple entities around some coordinate or player
+ spawnscouts => Spawns zombie scouts
+ SpawnScreen => Display SpawnScreen
+ spawnsupplycrate => Spawns a supply crate where the player is
+ spawnwanderinghorde => Spawns a wandering horde of zombies
+ spectrum => Force a particular lighting spectrum.
+ ss => spawn scouts near a player or coordinate
+ starve => Makes the player starve.
+ staticmap => Switches Navazgane map between static and dynamic
+ switchview sv => Switch between fpv and tpv
+ SystemInfo => List SystemInfo
+ teleport tp => Teleport the local player
+ teleportplayer tele => Teleport a given player
+ teleportplayerhome teleh => teleport a player to his home (on bedroll)
+ thirsty => Makes the player thirsty.
+ togglechatcommandhide tcch => specify a chat message prefix that defines chat commands that are hidden from chat
+ traderarea => ...
+ unlockall => unlock all secure loots, chests and doors for the current player.
+ updatelighton => Commands for UpdateLightOnAllMaterials and UpdateLightOnPlayers
+ version => Get the currently running version of the game and loaded mods
+ water => Control water settings
+ weather => Control weather settings
+ weathersurvival => Enables/disables weather survival
+ webpermission => Manage web permission levels
+ webstat => DEBUG PURPOSES ONLY
+ webtokens => Manage web tokens
+ whitelist => Manage whitelist entries
+lp
+2016-10-05T20:40:17 6554.217 INF Executing command 'lp' by Telnet from 59.167.155.186:55970
+1. id=171, BLADE, pos=(2325.2, 64.1, 1753.5), rot=(-18.3, 305.2, 0.0), remote=True, health=94, deaths=0, zombies=9, players=0, score=9, level=4, steamid=76543217654321123, ip=::ffff:42.241.136.12, ping=32
+2. id=1054, WanderingTurkeys, pos=(2272.6, 95.1, 557.9), rot=(-45.9, -966.6, 0.0), remote=True, health=85, deaths=0, zombies=11, players=0, score=11, level=3, steamid=76543217654321123, ip=::ffff:144.130.159.129, ping=215
+3. id=376, The Proxy, pos=(1949.7, 46.1, 1599.5), rot=(-69.1, -3901.5, 0.0), remote=True, health=77, deaths=2, zombies=12, players=0, score=8, level=4, steamid=76543217654321123, ip=::ffff:101.177.165.232, ping=32
+4. id=548, benito mussolini, pos=(1908.7, 38.1, 1687.0), rot=(-49.4, -650.9, 0.0), remote=True, health=34, deaths=0, zombies=2, players=0, score=2, level=2, steamid=76543217654321123, ip=::ffff:137.147.47.123, ping=38
+Total of 4 in the game
+2016-10-05T20:40:19 6555.790 INF Time: 107.58m FPS: 22.85 Heap: 874.8MB Max: 1397.9MB Chunks: 1251 CGO: 262 Ply: 4 Zom: 44 Ent: 56 (70) Items: 0 CO: 4
+2016-10-05T20:40:49 6585.825 INF Time: 108.08m FPS: 28.16 Heap: 902.2MB Max: 1397.9MB Chunks: 1251 CGO: 224 Ply: 4 Zom: 37 Ent: 47 (61) Items: 0 CO: 4
+say 2016-10-05T20:41:19 6615.994 INF Time: 108.58m FPS: 30.15 Heap: 946.7MB Max: 1397.9MB Chunks: 1251 CGO: 189 Ply: 4 Zom: 35 Ent: 46 (60) Items: 0 CO: 4
+2016-10-05T20:41:49 6646.053 INF Time: 109.08m FPS: 30.86 Heap: 1067.8MB Max: 1397.9MB Chunks: 1251 CGO: 190 Ply: 4 Zom: 32 Ent: 44 (59) Items: 0 CO: 4
+2016-10-05T20:42:19 6676.180 INF Time: 109.58m FPS: 29.85 Heap: 1232.8MB Max: 1397.9MB Chunks: 1251 CGO: 170 Ply: 4 Zom: 32 Ent: 42 (61) Items: 0 CO: 4
+gettime2016-10-05T20:42:50 6706.255 INF Time: 110.08m FPS: 28.66 Heap: 935.1MB Max: 1397.9MB Chunks: 1251 CGO: 205 Ply: 4 Zom: 36 Ent: 46 (62) Items: 0 CO: 4
+
+2016-10-05T20:42:56 6712.730 INF Executing command 'say gettime' by Telnet from 59.167.155.186:55970
+2016-10-05T20:42:56 6712.731 INF Chat: 'Server': gettime
+2016-10-05T20:43:20 6736.308 INF Time: 110.58m FPS: 27.52 Heap: 1224.5MB Max: 1397.9MB Chunks: 1251 CGO: 193 Ply: 4 Zom: 37 Ent: 47 (71) Items: 0 CO: 4
+2016-10-05T20:43:21 6737.747 INF Spawning this wave: 2
+2016-10-05T20:43:21 6737.761 INF Spawned [type=EntityZombie, name=zombieMoe, id=1335] at (2226.0, 95.0, 404.0) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:43:21 6737.777 INF Spawned [type=EntityZombie, name=zombieArlene, id=1336] at (2227.0, 96.0, 384.0) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:43:21 6737.778 INF Spawning this wave: 2
+2016-10-05T20:43:21 6737.791 INF Spawned [type=EntityZombie, name=zombieArlene, id=1337] at (2219.0, 96.0, 396.0) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:43:21 6737.806 INF Spawned [type=EntityZombie, name=zombieBoe, id=1338] at (2222.0, 96.0, 379.0) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:43:21 6737.807 INF Spawning this wave: 2
+2016-10-05T20:43:21 6737.820 INF Spawned [type=EntityZombie, name=zombieMoe, id=1339] at (2319.0, 95.0, 372.0) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:43:21 6737.842 INF Spawned [type=EntityZombie, name=zombieMoe, id=1340] at (2333.0, 96.0, 377.0) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:43:21 6737.843 INF Spawning this wave: 2
+2016-10-05T20:43:21 6737.856 INF Spawned [type=EntityZombie, name=zombieDarlene, id=1341] at (2333.0, 96.0, 401.0) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:43:21 6737.868 INF Spawned [type=EntityZombie, name=zombieDarlene, id=1342] at (2325.0, 96.0, 388.0) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:43:31 6747.731 INF Spawning this wave: 2
+2016-10-05T20:43:31 6747.760 INF Spawned [type=EntityZombie, name=zombieSteve, id=1344] at (2387.0, 95.0, 381.0) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:43:31 6747.772 INF Spawned [type=EntityZombie, name=zombieMarlene, id=1345] at (2391.0, 95.0, 391.0) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:43:31 6747.773 INF Spawning this wave: 2
+2016-10-05T20:43:31 6747.788 INF Spawned [type=EntityZombie, name=zombieArlene, id=1346] at (2379.0, 96.0, 379.0) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:43:31 6747.802 INF Spawned [type=EntityZombie, name=zombieNurse, id=1347] at (2390.0, 95.0, 384.0) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:43:41 6757.785 INF Player WanderingTurkeys disconnected after 7.1 minutes
+2016-10-05T20:43:41 6758.094 INF Player set to offline: 76543217654321123
+2016-10-05T20:43:41 6758.099 INF Player disconnected: EntityID=1054, PlayerID='76543217654321123', OwnerID='76543217654321123', PlayerName='WanderingTurkeys'
+2016-10-05T20:43:41 6758.100 INF [EAC] FreeUser: EntityID=1054, PlayerID='76543217654321123', OwnerID='76543217654321123', PlayerName='WanderingTurkeys'
+2016-10-05T20:43:41 6758.101 INF [EAC] Log: [UnregisterClient] ClientID: 16 PlayerGUID: 76543217654321123
+2016-10-05T20:43:41 6758.102 INF GMSG: Player 'WanderingTurkeys' left the game
+2016-10-05T20:43:41 6758.102 INF NET: UNET: Dropping client: 4
+2016-10-05T20:43:41 6758.103 INF NET: UNET: Bytes/packages sent successfully: 6549824 B / 14689, bytes/packages failed: 0 B / 0
+2016-10-05T20:43:42 6758.382 INF NET: UNET: Client disconnect from: 4 (Ok)
+2016-10-05T20:43:50 6766.650 INF Time: 111.08m FPS: 50.40 Heap: 1092.1MB Max: 1397.9MB Chunks: 1251 CGO: 57 Ply: 3 Zom: 2 Ent: 10 (77) Items: 3 CO: 3
+2016-10-05T20:44:20 6796.677 INF Time: 111.58m FPS: 55.30 Heap: 927.6MB Max: 1397.9MB Chunks: 952 CGO: 63 Ply: 3 Zom: 2 Ent: 10 (27) Items: 3 CO: 3
+
+lp
+2016-10-05T20:44:30 6806.552 INF Executing command 'lp' by Telnet from 59.167.155.186:55970
+1. id=171, BLADE, pos=(1902.4, 38.1, 1677.6), rot=(-5.1, 177.4, 0.0), remote=True, health=94, deaths=0, zombies=10, players=0, score=10, level=4, steamid=76543217654321123, ip=::ffff:42.241.136.12, ping=36
+2. id=376, The Proxy, pos=(1943.9, 42.3, 1603.5), rot=(-30.2, -4207.2, 0.0), remote=True, health=77, deaths=2, zombies=15, players=0, score=11, level=4, steamid=76543217654321123, ip=::ffff:101.177.165.232, ping=32
+3. id=548, benito mussolini, pos=(1947.8, 42.1, 1600.5), rot=(8.0, -285.0, 0.0), remote=True, health=19, deaths=0, zombies=2, players=0, score=2, level=2, steamid=76543217654321123, ip=::ffff:137.147.47.123, ping=38
+Total of 3 in the game
+2016-10-05T20:44:50 6826.709 INF Time: 112.08m FPS: 60.04 Heap: 872.9MB Max: 1397.9MB Chunks: 952 CGO: 46 Ply: 3 Zom: 2 Ent: 7 (23) Items: 1 CO: 3
+2016-10-05T20:45:20 6856.729 INF Time: 112.58m FPS: 62.07 Heap: 972.9MB Max: 1397.9MB Chunks: 952 CGO: 39 Ply: 3 Zom: 1 Ent: 6 (23) Items: 1 CO: 3
+2016-10-05T20:45:50 6886.743 INF Time: 113.08m FPS: 64.88 Heap: 1137.0MB Max: 1397.9MB Chunks: 952 CGO: 23 Ply: 3 Zom: 0 Ent: 8 (27) Items: 5 CO: 3
+2016-10-05T20:46:20 6916.795 INF Time: 113.58m FPS: 67.19 Heap: 873.4MB Max: 1397.9MB Chunks: 952 CGO: 33 Ply: 3 Zom: 1 Ent: 9 (25) Items: 4 CO: 3
+2016-10-05T20:46:50 6946.801 INF Time: 114.08m FPS: 62.93 Heap: 843.7MB Max: 1397.9MB Chunks: 952 CGO: 30 Ply: 3 Zom: 1 Ent: 6 (23) Items: 1 CO: 3
+2016-10-05T20:47:20 6976.804 INF Time: 114.58m FPS: 68.40 Heap: 912.6MB Max: 1397.9MB Chunks: 952 CGO: 30 Ply: 3 Zom: 1 Ent: 7 (24) Items: 1 CO: 3
+2016-10-05T20:47:50 7006.812 INF Time: 115.08m FPS: 57.24 Heap: 1042.3MB Max: 1397.9MB Chunks: 952 CGO: 41 Ply: 3 Zom: 1 Ent: 5 (25) Items: 1 CO: 3
+2016-10-05T20:48:20 7036.832 INF Time: 115.58m FPS: 61.46 Heap: 896.9MB Max: 1397.9MB Chunks: 952 CGO: 32 Ply: 3 Zom: 1 Ent: 5 (21) Items: 0 CO: 3
+2016-10-05T20:48:50 7066.936 INF Time: 116.08m FPS: 71.85 Heap: 838.8MB Max: 1397.9MB Chunks: 952 CGO: 27 Ply: 3 Zom: 1 Ent: 5 (21) Items: 0 CO: 3
+2016-10-05T20:49:20 7096.951 INF Time: 116.58m FPS: 72.25 Heap: 885.2MB Max: 1397.9MB Chunks: 952 CGO: 27 Ply: 3 Zom: 1 Ent: 5 (21) Items: 0 CO: 3
+2016-10-05T20:49:50 7126.958 INF Time: 117.08m FPS: 78.43 Heap: 937.9MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (21) Items: 0 CO: 3
+2016-10-05T20:50:20 7156.988 INF Time: 117.59m FPS: 72.82 Heap: 1004.2MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (21) Items: 0 CO: 3
+2016-10-05T20:50:50 7187.034 INF Time: 118.09m FPS: 76.73 Heap: 844.7MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (20) Items: 0 CO: 3
+2016-10-05T20:51:20 7217.036 INF Time: 118.59m FPS: 78.91 Heap: 903.7MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (20) Items: 0 CO: 3
+2016-10-05T20:51:50 7247.051 INF Time: 119.09m FPS: 79.51 Heap: 945.5MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (20) Items: 0 CO: 3
+2016-10-05T20:52:20 7277.090 INF Time: 119.59m FPS: 75.42 Heap: 991.7MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (21) Items: 0 CO: 3
+2016-10-05T20:52:35 7291.577 INF AIDirector: Scout spawning failed, FindHordeTargets() returned false!
+2016-10-05T20:52:42 7298.622 INF Spawning Wandering Horde.
+2016-10-05T20:52:42 7298.632 INF AIDirector: Spawning wandering horde moving towards player '[type=EntityPlayer, name=BLADE, id=171]'
+2016-10-05T20:52:42 7298.677 INF Spawning this wave: 5
+2016-10-05T20:52:42 7298.721 INF Spawned [type=EntityZombie, name=zombieDarlene, id=1365] at (1860.5, 44.8, 1522.5) Day=2 TotalInWave=1 CurrentWave=1
+2016-10-05T20:52:42 7298.722 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieDarlene, id=1365]' was spawned and is moving towards pitstop.
+2016-10-05T20:52:43 7299.702 INF Spawned [type=EntityZombie, name=zombieSteve, id=1366] at (1862.5, 44.8, 1526.5) Day=2 TotalInWave=2 CurrentWave=1
+2016-10-05T20:52:43 7299.703 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieSteve, id=1366]' was spawned and is moving towards pitstop.
+2016-10-05T20:52:44 7300.730 INF Spawned [type=EntityZombie, name=zombieMarlene, id=1367] at (1864.5, 45.0, 1526.5) Day=2 TotalInWave=3 CurrentWave=1
+2016-10-05T20:52:44 7300.732 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieMarlene, id=1367]' was spawned and is moving towards pitstop.
+2016-10-05T20:52:45 7301.717 INF Spawned [type=EntityZombie, name=zombieMarlene, id=1368] at (1855.5, 45.1, 1524.5) Day=2 TotalInWave=4 CurrentWave=1
+2016-10-05T20:52:45 7301.718 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieMarlene, id=1368]' was spawned and is moving towards pitstop.
+2016-10-05T20:52:46 7302.741 INF Spawned [type=EntityZombie, name=zombieMoe, id=1369] at (1859.5, 44.6, 1524.5) Day=2 TotalInWave=5 CurrentWave=1
+2016-10-05T20:52:46 7302.742 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieMoe, id=1369]' was spawned and is moving towards pitstop.
+2016-10-05T20:52:50 7307.183 INF Time: 120.09m FPS: 64.28 Heap: 849.2MB Max: 1397.9MB Chunks: 952 CGO: 33 Ply: 3 Zom: 5 Ent: 9 (25) Items: 0 CO: 6
+2016-10-05T20:53:02 7318.438 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieDarlene, id=1365]' is being removed from horde control.
+2016-10-05T20:53:05 7321.494 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieSteve, id=1366]' is being removed from horde control.
+2016-10-05T20:53:13 7329.720 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieMarlene, id=1367]' is being removed from horde control.
+2016-10-05T20:53:16 7332.733 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieMarlene, id=1368]' is being removed from horde control.
+2016-10-05T20:53:18 7334.800 INF AIDirector: wandering horde zombie '[type=EntityZombie, name=zombieMoe, id=1369]' is being removed from horde control.
+2016-10-05T20:53:20 7337.191 INF Time: 120.59m FPS: 58.50 Heap: 952.8MB Max: 1397.9MB Chunks: 952 CGO: 38 Ply: 3 Zom: 5 Ent: 10 (26) Items: 1 CO: 7
+2016-10-05T20:53:50 7367.220 INF Time: 121.09m FPS: 55.07 Heap: 1147.4MB Max: 1397.9MB Chunks: 952 CGO: 33 Ply: 3 Zom: 5 Ent: 9 (26) Items: 1 CO: 7
+2016-10-05T20:54:21 7397.282 INF Time: 121.59m FPS: 53.98 Heap: 996.3MB Max: 1397.9MB Chunks: 952 CGO: 26 Ply: 3 Zom: 5 Ent: 9 (25) Items: 0 CO: 6
+2016-10-05T20:54:51 7427.391 INF Time: 122.09m FPS: 55.49 Heap: 853.4MB Max: 1397.9MB Chunks: 952 CGO: 21 Ply: 3 Zom: 3 Ent: 9 (24) Items: 0 CO: 6
+2016-10-05T20:55:15 7451.807 INF [NET] PlayerConnected EntityID=-1, PlayerID='', OwnerID='', PlayerName=''
+2016-10-05T20:55:15 7451.943 INF PlayerLogin: Baconeandeggs/Alpha 14.7
+2016-10-05T20:55:15 7451.944 INF Token length: 1368
+2016-10-05T20:55:15 7451.944 INF Player "Baconeandeggs" denied: Game Version Mismatch: you have 'Alpha 14.7' and server has 'Alpha 15' result: ErrOther
+2016-10-05T20:55:15 7451.945 INF Kicking player: Game Version Mismatch: you have 'Alpha 14.7' and server has 'Alpha 15'
+2016-10-05T20:55:15 7452.145 INF [NET] PlayerDisconnected EntityID=-1, PlayerID='76543217654321123', OwnerID='', PlayerName='Baconeandeggs'
+2016-10-05T20:55:15 7452.147 INF Created new player entry for ID: 76543217654321123
+2016-10-05T20:55:15 7452.150 INF Player disconnected: EntityID=-1, PlayerID='76543217654321123', OwnerID='', PlayerName='Baconeandeggs'
+2016-10-05T20:55:15 7452.151 INF [EAC] FreeUser: EntityID=-1, PlayerID='76543217654321123', OwnerID='', PlayerName='Baconeandeggs'
+2016-10-05T20:55:15 7452.152 ERR [EAC] Log: [UnregisterClient] Unknown ClientID( 0 )!
+2016-10-05T20:55:16 7452.450 ERR DisconnectClient: Player 76543217654321123 not found
+2016-10-05T20:55:16 7453.198 INF Start a new wave 'RoamingHordeSpawnNight'. timeout=1s
+2016-10-05T20:55:16 7453.198 INF AIDirector: Wandering Horde Spawn Finished (all mobs spawned).
+2016-10-05T20:55:21 7458.032 INF Time: 122.59m FPS: 59.50 Heap: 1088.1MB Max: 1397.9MB Chunks: 952 CGO: 21 Ply: 3 Zom: 1 Ent: 7 (24) Items: 0 CO: 5
+2016-10-05T20:55:51 7488.100 INF Time: 123.09m FPS: 62.48 Heap: 893.0MB Max: 1397.9MB Chunks: 952 CGO: 24 Ply: 3 Zom: 0 Ent: 5 (22) Items: 0 CO: 4
+2016-10-05T20:56:21 7518.096 INF Time: 123.59m FPS: 73.98 Heap: 1013.3MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (23) Items: 0 CO: 3
+2016-10-05T20:56:51 7548.174 INF Time: 124.09m FPS: 68.83 Heap: 844.8MB Max: 1397.9MB Chunks: 952 CGO: 18 Ply: 3 Zom: 0 Ent: 4 (20) Items: 0 CO: 3
+2016-10-05T20:57:21 7578.186 INF Time: 124.59m FPS: 61.09 Heap: 1193.9MB Max: 1397.9MB Chunks: 952 CGO: 23 Ply: 3 Zom: 0 Ent: 4 (20) Items: 0 CO: 3
+2016-10-05T20:57:52 7608.242 INF Time: 125.09m FPS: 59.96 Heap: 1042.9MB Max: 1397.9MB Chunks: 952 CGO: 25 Ply: 3 Zom: 0 Ent: 4 (20) Items: 0 CO: 3
+2016-10-05T20:58:22 7638.348 INF Time: 125.59m FPS: 58.65 Heap: 877.5MB Max: 1397.9MB Chunks: 952 CGO: 38 Ply: 3 Zom: 1 Ent: 5 (21) Items: 0 CO: 3
+2016-10-05T20:58:52 7668.395 INF Time: 126.09m FPS: 59.71 Heap: 849.4MB Max: 1397.9MB Chunks: 952 CGO: 37 Ply: 3 Zom: 1 Ent: 6 (22) Items: 0 CO: 3
+2016-10-05T20:59:22 7698.396 INF Time: 126.59m FPS: 62.98 Heap: 1003.9MB Max: 1397.9MB Chunks: 952 CGO: 36 Ply: 3 Zom: 1 Ent: 5 (22) Items: 0 CO: 3
+2016-10-05T20:59:52 7728.447 INF Time: 127.09m FPS: 61.02 Heap: 844.1MB Max: 1397.9MB Chunks: 952 CGO: 37 Ply: 3 Zom: 1 Ent: 7 (23) Items: 1 CO: 3
+2016-10-05T21:00:22 7758.456 INF Time: 127.59m FPS: 58.45 Heap: 1090.5MB Max: 1397.9MB Chunks: 952 CGO: 43 Ply: 3 Zom: 1 Ent: 7 (24) Items: 1 CO: 3
+2016-10-05T21:00:52 7788.552 INF Time: 128.09m FPS: 60.16 Heap: 847.2MB Max: 1397.9MB Chunks: 952 CGO: 42 Ply: 3 Zom: 1 Ent: 5 (21) Items: 0 CO: 3
+2016-10-05T21:01:22 7818.591 INF Time: 128.59m FPS: 57.17 Heap: 1025.5MB Max: 1397.9MB Chunks: 952 CGO: 41 Ply: 3 Zom: 1 Ent: 5 (23) Items: 0 CO: 3
+2016-10-05T21:01:37 7834.044 INF NET: UNET: Connect from: 4 (Ok)
+2016-10-05T21:01:37 7834.142 INF [NET] PlayerConnected EntityID=-1, PlayerID='', OwnerID='', PlayerName=''
+2016-10-05T21:01:38 7834.293 INF PlayerLogin: Baconeandeggs/Alpha 15
+2016-10-05T21:01:38 7834.294 INF Token length: 1368
+2016-10-05T21:01:38 7834.294 INF [Steamworks.NET] Auth.AuthenticateUser()
+2016-10-05T21:01:38 7834.296 INF [Steamworks.NET] Authenticating player: Baconeandeggs SteamId: 76543217654321123 TicketLen: 1024 Result: k_EBeginAuthSessionResultOK
+2016-10-05T21:01:38 7834.297 INF Allowing player with id 76543217654321123
+2016-10-05T21:01:38 7834.297 INF [EAC] Registering user: EntityID=-1, PlayerID='76543217654321123', OwnerID='', PlayerName='Baconeandeggs'
+2016-10-05T21:01:38 7834.300 INF [EAC] Log: [RegisterClient] ClientID: 17 PlayerGUID: 76543217654321123 OwnerGUID: N/A PlayerName:
+2016-10-05T21:01:38 7834.628 INF [Steamworks.NET] Authentication callback. ID: 76543217654321123, owner: 76543217654321123, result: k_EAuthSessionResponseOK
+2016-10-05T21:01:38 7835.102 INF RequestToEnterGame: 76543217654321123/Baconeandeggs
+2016-10-05T21:01:39 7835.997 INF [EAC] UserStatusHandler callback. Status: ClientAuthenticated ReqKick: False Message: Client authenticated
+2016-10-05T21:01:50 7847.210 INF RequestToSpawnPlayer: 1388, Baconeandeggs, 8
+2016-10-05T21:01:52 7848.287 INF Created player with id=1388
+2016-10-05T21:01:52 7848.292 INF GMSG: Player 'Baconeandeggs' joined the game
+2016-10-05T21:01:52 7848.292 INF Player connected, entityid=1388, name=Baconeandeggs, steamid=76543217654321123, steamOwner=76543217654321123, ip=::ffff:106.70.217.159
+2016-10-05T21:01:52 7848.292 INF Player set to online: 76543217654321123
+2016-10-05T21:01:53 7849.402 INF Time: 129.09m FPS: 56.30 Heap: 1007.7MB Max: 1397.9MB Chunks: 952 CGO: 38 Ply: 4 Zom: 1 Ent: 8 (25) Items: 1 CO: 4
+2016-10-05T21:01:57 7853.243 INF Chat: 'The Proxy': Oh, Hey Bacon
+2016-10-05T21:02:01 7857.476 INF Chat: 'The Proxy': Finally decided to join us
+2016-10-05T21:02:08 7864.381 INF Chat: 'The Proxy': What was that about waiting for the full release
+2016-10-05T21:02:23 7879.416 INF Time: 129.59m FPS: 54.02 Heap: 931.6MB Max: 1397.9MB Chunks: 952 CGO: 45 Ply: 4 Zom: 1 Ent: 7 (23) Items: 1 CO: 4
+2016-10-05T21:02:25 7881.430 INF Chat: 'Baconeandeggs': I am confirmed liar, So what?
+2016-10-05T21:02:53 7909.428 INF Time: 130.09m FPS: 53.93 Heap: 900.2MB Max: 1397.9MB Chunks: 952 CGO: 42 Ply: 4 Zom: 1 Ent: 7 (23) Items: 0 CO: 4
+2016-10-05T21:03:23 7939.496 INF Time: 130.59m FPS: 47.46 Heap: 944.5MB Max: 1397.9MB Chunks: 952 CGO: 50 Ply: 4 Zom: 1 Ent: 6 (22) Items: 0 CO: 4
+2016-10-05T21:03:53 7969.580 INF Time: 131.09m FPS: 49.61 Heap: 936.0MB Max: 1397.9MB Chunks: 952 CGO: 52 Ply: 4 Zom: 1 Ent: 6 (22) Items: 0 CO: 4
+2016-10-05T21:04:23 7999.609 INF Time: 131.59m FPS: 56.00 Heap: 1023.1MB Max: 1397.9MB Chunks: 952 CGO: 45 Ply: 4 Zom: 1 Ent: 6 (22) Items: 0 CO: 4
+2016-10-05T21:04:53 8029.649 INF Time: 132.09m FPS: 48.58 Heap: 973.1MB Max: 1397.9MB Chunks: 952 CGO: 66 Ply: 4 Zom: 3 Ent: 9 (25) Items: 0 CO: 4
+2016-10-05T21:05:23 8059.691 INF Time: 132.59m FPS: 39.86 Heap: 1116.7MB Max: 1397.9MB Chunks: 988 CGO: 102 Ply: 4 Zom: 9 Ent: 16 (32) Items: 0 CO: 4
+2016-10-05T21:05:53 8089.754 INF Time: 133.09m FPS: 41.81 Heap: 1159.2MB Max: 1397.9MB Chunks: 1059 CGO: 92 Ply: 4 Zom: 7 Ent: 15 (32) Items: 0 CO: 4
+2016-10-05T21:06:23 8119.793 INF Time: 133.60m FPS: 45.18 Heap: 1088.2MB Max: 1397.9MB Chunks: 1059 CGO: 94 Ply: 4 Zom: 7 Ent: 16 (31) Items: 1 CO: 4
+2016-10-05T21:06:53 8149.896 INF Time: 134.10m FPS: 40.65 Heap: 947.2MB Max: 1397.9MB Chunks: 1122 CGO: 89 Ply: 4 Zom: 7 Ent: 16 (32) Items: 2 CO: 4
+2016-10-05T21:07:23 8179.922 INF Time: 134.60m FPS: 41.78 Heap: 963.1MB Max: 1397.9MB Chunks: 1122 CGO: 107 Ply: 4 Zom: 8 Ent: 17 (33) Items: 1 CO: 4
+2016-10-05T21:08:05 8222.154 ERR NET: UNET: Could not send package to client 4 (WrongConnection)
+2016-10-05T21:08:05 8222.157 ERR NET: UNET: Could not send package to client 3 (WrongConnection)
+2016-10-05T21:08:06 8223.097 WRN NET: UNET: Error receiving data from 3: event=DisconnectEvent, error=Timeout
+2016-10-05T21:08:06 8223.098 INF NET: UNET: Client disconnect from: 3 (Timeout)
+2016-10-05T21:08:06 8223.099 INF [NET] PlayerDisconnected EntityID=376, PlayerID='76543217654321123', OwnerID='76543217654321123', PlayerName='The Proxy'
+2016-10-05T21:08:06 8223.101 INF Player set to offline: 76543217654321123
+2016-10-05T21:08:06 8223.112 INF Player disconnected: EntityID=376, PlayerID='76543217654321123', OwnerID='76543217654321123', PlayerName='The Proxy'
+2016-10-05T21:08:06 8223.113 INF [EAC] FreeUser: EntityID=376, PlayerID='76543217654321123', OwnerID='76543217654321123', PlayerName='The Proxy'
+2016-10-05T21:08:06 8223.115 INF [EAC] Log: [UnregisterClient] ClientID: 3 PlayerGUID: 76543217654321123
+2016-10-05T21:08:08 8224.390 INF GMSG: Player 'The Proxy' left the game
+2016-10-05T21:08:08 8224.391 INF NET: UNET: Dropping client: 3
+2016-10-05T21:08:08 8224.391 INF NET: UNET: Bytes/packages sent successfully: 71912436 B / 200006, bytes/packages failed: 141 B / 1
+2016-10-05T21:08:08 8224.392 WRN NET: UNET: Error receiving data from 4: event=DisconnectEvent, error=Timeout
+2016-1Connection closed by foreign host.
