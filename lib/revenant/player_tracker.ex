@@ -61,7 +61,7 @@ defmodule Revenant.PlayerTracker do
     count = Application.get_env(:revenant, :ping_track_count)
 
     Map.update(pings, player_id, {:lists.duplicate(count, ping), ping},
-      fn {pings, average} -> {:lists.droplast([ping | pings]), :lists.sum(pings) / count} end)
+      fn {pings, _} -> {:lists.droplast([ping | pings]), :lists.sum(pings) / count} end)
   end
 
   defp kick_high_ping(pings, ping_limit, socket) do

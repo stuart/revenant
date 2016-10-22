@@ -1,3 +1,4 @@
+# This is the top level application supervisor.
 defmodule Revenant.Supervisor do
   use Supervisor
 

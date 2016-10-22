@@ -41,12 +41,7 @@ defmodule Revenant.Schema.Location do
 
       existing_home ->
         cs = changeset(existing_home, %{name: "home_#{player_id}",
-          x: x, y: y, z: z,
-          public: false,
-          description: "Player #{player_id}'s home.",
-          player_id: player_id,
-          server_id: server_id
-          })
+          x: x, y: y, z: z })
 
         {:ok, _} = Revenant.Repo.update(cs)
     end

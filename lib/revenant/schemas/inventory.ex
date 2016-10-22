@@ -16,8 +16,6 @@ defmodule Revenant.Schema.Inventory do
   end
 
   def add_item(inventory, item) do
-    current = inventory.items
-    new_items = current ++ [item]
     cs = changeset(inventory, %{}) |> Ecto.Changeset.put_embed(:items, [item])
     Repo.update(cs)
   end

@@ -18,7 +18,7 @@ defmodule Revenant.LoginTracker do
     GenServer.cast pid, {:track, message}
   end
 
-  def handle_cast({:track, %{connection: %{entity_id: entity_id, ip: ip, name: name, steam_id: steam_id}}}, state) do
+  def handle_cast({:track, %{connection: %{ip: ip, name: name, steam_id: steam_id}}}, state) do
     server = Revenant.Query.Server.find(state.server_id)
 
     case Revenant.IPCheck.check(ip, server) do
@@ -28,7 +28,7 @@ defmodule Revenant.LoginTracker do
                 Logger.info("New player: #{name}")
                 Process.send_after(self, {:new_player_login, name},
                                    Application.get_env(:revenant, :login_message_delay))
-            player ->
+            _ ->
                 Logger.info("Returning player #{name}")
                 Process.send_after(self, {:returning_player_login, name},
                                    Application.get_env(:revenant, :login_message_delay))
@@ -40,7 +40,7 @@ defmodule Revenant.LoginTracker do
     {:noreply, state}
   end
 
-  def handle_cast({:track, %{disconnection: disconnection}}, state) do
+  def handle_cast({:track, %{disconnection: _}}, state) do
     {:noreply, state}
   end
 

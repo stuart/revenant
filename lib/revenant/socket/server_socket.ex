@@ -47,29 +47,23 @@ defmodule Revenant.ServerSocket do
         {:ok, %__MODULE__{socket: socket, listeners: [], sup: sup, server_id: id}}
 
       "e enter password:\r\n" ->
-        IO.puts "Incorrect password for server."
+        Logger.error "Incorrect password for server: #{id}"
         {:error, :password_error}
 
       _ ->
-        IO.puts "Login failed. Unexpected response from telnet port."
-        IO.puts login_response
+        Logger.error "Login failed. Unexpected response from telnet port."
+        Logger.error login_response
         {:error, :unexpected_response}
     end
   end
 
-  def handle_cast({:send, command}, state) do
-    :ok = :gen_tcp.send state.socket, command <> "\r\n"
-    case telnet_recv(state.socket) do
-      {:ok, resp} ->
-        {:noreply, state}
-      {:error, :timeout} ->
-        Logger.warn "Telnet connection timed out."
-        {:stop, :timeout, :timeout, state}
-    end
+  def handle_cast(:listen, state) do
+    read_lines(state.socket, state.listeners)
+    {:noreply, state}
   end
 
-  def handle_cast(:listen, state) do
-    slurp_lines(state.socket, state.listeners)
+  def handle_cast({:send, command}, state) do
+    :ok = :gen_tcp.send state.socket, command <> "\r\n"
     {:noreply, state}
   end
 
@@ -97,7 +91,6 @@ defmodule Revenant.ServerSocket do
   end
 
   def handle_info(:start_listener_sup, state) do
-    Logger.info "Starting listener supervisor process"
     {:ok, _pid} = Supervisor.start_child(state.sup, supervisor(Revenant.ListenerSupervisor,[self(), state.server_id], restart: :temporary))
     {:noreply, state}
   end
@@ -107,12 +100,12 @@ defmodule Revenant.ServerSocket do
   end
 
   def terminate(reason, state) do
-    Logger.info "Shutting down server socket"
-    IO.inspect reason
+    :io.format("Shutting down server socket: ~p", [reason])
+    |> Logger.info
     :ok = :gen_tcp.close state.socket
   end
 
-  defp slurp_lines socket, listeners do
+  defp read_lines socket, listeners do
     case telnet_recv(socket) do
       {:ok, resp} ->
         case Revenant.Grammar.parse(String.strip(resp)) do
@@ -121,7 +114,7 @@ defmodule Revenant.ServerSocket do
           :mismatch -> true
           _ -> true
         end
-        slurp_lines socket, listeners
+        read_lines socket, listeners
       {:error, :timeout} ->
         true
     end

@@ -35,7 +35,7 @@ defmodule Revenant.Worker.ZgateCreate do
     "[ccccff]Zgate with name: #{name} has already been taken."
   end
 
-  defp create_zgate_error_message(_, name) do
-    "[ccccff]Zgate could not be created."
+  defp create_gate_error_message(_, name) do
+    "[ccccff]Zgate #{name} could not be created."
   end
 end

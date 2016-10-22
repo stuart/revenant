@@ -57,17 +57,17 @@ defmodule GrammarTest do
 
   test "Can parse a player belt message" do
     line = "Belt of player Doc Saturn:"
-    assert {:ok, %{inventory: %{name: "Doc Saturn", type: :belt}, type: :inventory}} = Revenant.Grammar.parse(line)
+    assert {:ok, %{inventory: %{name: "Doc Saturn", type: "belt"}, type: :inventory}} = Revenant.Grammar.parse(line)
   end
 
   test "Can parse a player bag message" do
     line = "Bagpack of player Doc Saturn:"
-    assert {:ok, %{inventory: %{name: "Doc Saturn", type: :bag}, type: :inventory}} = Revenant.Grammar.parse(line)
+    assert {:ok, %{inventory: %{name: "Doc Saturn", type: "bag"}, type: :inventory}} = Revenant.Grammar.parse(line)
   end
 
   test "Can parse a player equipment message" do
     line = "Equipment of player Doc Saturn:"
-    assert {:ok, %{inventory: %{name: "Doc Saturn", type: :equipment}, type: :inventory}} = Revenant.Grammar.parse(line)
+    assert {:ok, %{inventory: %{name: "Doc Saturn", type: "equipment"}, type: :inventory}} = Revenant.Grammar.parse(line)
   end
 
   test "Can parse an item line" do
