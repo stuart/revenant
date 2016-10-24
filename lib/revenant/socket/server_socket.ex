@@ -34,7 +34,7 @@ defmodule Revenant.ServerSocket do
   end
 
   def init({sup, host, port, password, id}) do
-    {:ok, socket} = :gen_tcp.connect(host, port, [:binary, :inet, {:packet, :line}, {:active, :false}])
+    {:ok, socket} = :gen_tcp.connect(host, port, [:binary, :inet, {:packet, :line}, {:active, :false}, {:keepalive, :true}])
     {:ok, "Please enter password:\r\n"} = telnet_recv(socket)
     :ok = :gen_tcp.send socket, password <> "\r\n"
     {:ok, login_response} = telnet_recv(socket)
