@@ -16,6 +16,8 @@ defmodule Revenant.Schema.Server do
     has_many :players, Revenant.Schema.Player
     has_many :locations, Revenant.Schema.Location
     has_many :chats, Revenant.Schema.Chat
+    has_many :scheduled_messages, Revenant.Schema.ScheduledMessage
+
     embeds_one :ip_permissions, Revenant.Schema.Permissions
     embeds_one :country_permissions, Revenant.Schema.Permissions
 

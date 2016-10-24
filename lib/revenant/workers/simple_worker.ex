@@ -27,7 +27,6 @@ defmodule Revenant.Worker.Simple do
 
       def handle_cast(:command, state) do
         apply __MODULE__, :handle_command, [state]
-        IO.puts "HANDLE CAST :command #{__MODULE__}"
         {:stop, :normal, state}
       end
     end

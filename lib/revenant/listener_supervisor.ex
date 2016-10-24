@@ -11,6 +11,7 @@ defmodule Revenant.ListenerSupervisor do
        worker(Revenant.CommandHandler, [socket, server_id]),
        worker(Revenant.PlayerTracker, [socket, server_id]),
        worker(Revenant.LoginTracker, [socket, server_id]),
+       supervisor(Revenant.ScheduledMessenger, [socket, server_id])
      ]
 
      supervise(children, strategy: :one_for_one)
