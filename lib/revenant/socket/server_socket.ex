@@ -95,6 +95,10 @@ defmodule Revenant.ServerSocket do
     {:noreply, state}
   end
 
+  def handle_info(:tick, state) do
+    read_lines(state.socket, state.listeners)
+  end
+
   def handle_info(_, state) do
     {:noreply, state}
   end
@@ -108,13 +112,13 @@ defmodule Revenant.ServerSocket do
   defp read_lines socket, listeners do
     case telnet_recv(socket) do
       {:ok, resp} ->
+        Logger.info("Recv: #{String.strip(resp)}")
         case Revenant.Grammar.parse(String.strip(resp)) do
           {:ok, parsed_line} ->
             send_to_listeners(listeners, parsed_line)
           :mismatch -> true
           _ -> true
         end
-        read_lines socket, listeners
       {:error, :timeout} ->
         true
     end
