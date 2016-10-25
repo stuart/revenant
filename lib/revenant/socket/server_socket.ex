@@ -43,7 +43,7 @@ defmodule Revenant.ServerSocket do
       "Logon successful.\r\n" ->
         :ok = :gen_tcp.send socket, "say \"[REVENANT] Connected and listening.\"\r\n"
         send self(), :start_listener_sup
-        :timer.apply_interval(Application.get_env(:revenant, :telnet_listen_interval), GenServer, :cast, [self, :listen])
+        send self(), :listen
         {:ok, %__MODULE__{socket: socket, listeners: [], sup: sup, server_id: id}}
 
       "e enter password:\r\n" ->
@@ -55,11 +55,6 @@ defmodule Revenant.ServerSocket do
         Logger.error login_response
         {:error, :unexpected_response}
     end
-  end
-
-  def handle_cast(:listen, state) do
-    read_lines(state.socket, state.listeners)
-    {:noreply, state}
   end
 
   def handle_cast({:send, command}, state) do
@@ -95,8 +90,10 @@ defmodule Revenant.ServerSocket do
     {:noreply, state}
   end
 
-  def handle_info(:tick, state) do
+  def handle_info(:listen, state) do
     read_lines(state.socket, state.listeners)
+    Process.send_after(self, :listen, Application.get_env(:revenant, :telnet_listen_interval))
+    {:noreply, state}
   end
 
   def handle_info(_, state) do

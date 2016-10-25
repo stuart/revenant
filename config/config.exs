@@ -25,10 +25,10 @@ config :logger, level: :info
 config :revenant,
   ecto_repos: [Revenant.Repo],
   worker_timeout: 5000,
-  telnet_listen_interval: 1000,
+  telnet_listen_interval: 500,
   telnet_recv_timeout: 1000,
   player_tracker_interval: 10000,
-  inventory_tracker_interval: 30000,
+  inventory_tracker_interval: 30000,t
   who_distance: 50,
   login_message_delay: 15000,
   ping_track_count: 5
