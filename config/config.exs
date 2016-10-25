@@ -28,7 +28,7 @@ config :revenant,
   telnet_listen_interval: 500,
   telnet_recv_timeout: 1000,
   player_tracker_interval: 10000,
-  inventory_tracker_interval: 30000,t
+  inventory_tracker_interval: 30000,
   who_distance: 50,
   login_message_delay: 15000,
   ping_track_count: 5
