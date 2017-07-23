@@ -41,10 +41,10 @@ defmodule Revenant.PlayerTracker do
 
   def handle_info({:tick, socket}, state) do
     Revenant.ServerSocket.post socket, "lp"
-    kick_high_ping(state.pings, state.ping_limit, socket)
+    pings = kick_high_ping(state.pings, state.ping_limit, socket)
 
     Process.send_after(self, {:tick, socket}, Application.get_env(:revenant, :player_tracker_interval))
-    {:noreply, state}
+    {:noreply, %{state | pings: pings}}
   end
 
   def handle_info({:startup_message, socket}, state) do
@@ -65,12 +65,15 @@ defmodule Revenant.PlayerTracker do
   end
 
   defp kick_high_ping(pings, ping_limit, socket) do
-    Map.to_list(pings)
-    |> Enum.each(
-      fn({player_id, {_, ping_average}}) when ping_average > ping_limit ->
-        player = Revenant.Repo.get(Revenant.Schema.Player, player_id)
-        Revenant.ServerSocket.post socket, "kick \"#{player.name}\" \"Ping too high.\""
-      _ -> nil
-      end)
+    not_kicked = Map.to_list(pings)
+              |> Enum.filter(
+                fn({player_id, {_, ping_average}}) when ping_average > ping_limit ->
+                    player = Revenant.Repo.get(Revenant.Schema.Player, player_id)
+                    Revenant.ServerSocket.post socket, "kick \"#{player.name}\" \"Ping too high.\""
+                    false
+                  _ -> true
+                end)
+
+    Map.new(not_kicked)
   end
 end
