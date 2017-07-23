@@ -1,5 +1,5 @@
 defmodule Revenant.HordeTime do
-  @horde_minutes 10080
+  @horde_minutes 10080 # 7 days
 
   def time_to_horde_start day, hour do
     {day_diff(day, hour), hour_diff(hour)}
