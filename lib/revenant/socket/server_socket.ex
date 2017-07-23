@@ -63,7 +63,7 @@ defmodule Revenant.ServerSocket do
   end
 
   def handle_cast({:say, message}, state) do
-    :ok = :gen_tcp.send state.socket, "say \"#{message}\"\r\n"
+    send_multiline_say(message, state.socket)
     {:noreply, state}
   end
 
@@ -125,6 +125,13 @@ defmodule Revenant.ServerSocket do
     lines = String.split(message, "\n")
     Enum.each(lines, fn(line) ->
       :ok = :gen_tcp.send socket, "pm \"#{user}\" \"#{line}\"\r\n"
+    end)
+  end
+
+  defp send_multiline_say message, socket do
+    lines = String.split(message, "\n")
+    Enum.each(lines, fn(line) ->
+      :ok = :gen_tcp.send socket, "say \"#{line}\"\r\n"
     end)
   end
 
