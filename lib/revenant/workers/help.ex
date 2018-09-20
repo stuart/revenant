@@ -6,15 +6,15 @@ defmodule Revenant.Worker.Help do
   end
 
   defp help_message(["/day"]) do
-    "[ccccff]/day : [cccccc]Shows how many days and hours to the next horde."
+    "[ccccff]/day or /day7 : [cccccc]Shows how many days and hours to the next horde."
   end
 
   defp help_message(["/sethome"]) do
-    "[ccccff]/sethome : [cccccc]Sets your home teleport location to your current position."
+    "[ccccff]/sethome or /setbase : [cccccc]Sets your home teleport location to your current position."
   end
 
   defp help_message(["/home"]) do
-    "[ccccff]/home : [cccccc]teleports you to the position that you previously set with /sethome."
+    "[ccccff]/home or /base : [cccccc]teleports you to the position that you previously set with /sethome."
   end
 
   defp help_message(["/who"]) do
@@ -26,10 +26,11 @@ defmodule Revenant.Worker.Help do
       [ccccff]/zgate : [cccccc]zGates are locations that you can set to teleport to.
       [ccccff]/zgate create <name> : [cccccc]creates a zGate with that name.
       [ccccff]/zgate delete <name> : [cccccc]removes a zGate.
-      [ccccff]/zgate visit <name>  : [cccccc]teleports you to a zGate.
+      [ccccff]/zgate <name>  : [cccccc]teleports you to a zGate.
       [ccccff]/zgate toggle <name> : [cccccc]make a zGate public or private.
       [ccccff]/zgate list : [cccccc]lists all your zGates.
       [ccccff]/zgate list public : [cccccc]lists all public zGates.
+      [ffffff]/tp is an alias for /zgate so you can use that too.[ffffff]
     """
   end
   defp help_message _ do

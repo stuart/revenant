@@ -28,6 +28,7 @@ defmodule Revenant.CommandHandler do
   end
 
   def handle_cast {:command, %{chat: %{message: message, user: user}}}, {socket, server_id, worker_sup} do
+    ServerSocket.pm(socket, user, "[REVENANT] Server command received: #{message}")
     do_command(message, {user, socket, server_id, worker_sup})
     {:noreply, {socket, server_id, worker_sup}}
   end
@@ -50,6 +51,10 @@ defmodule Revenant.CommandHandler do
     start_command_worker(Revenant.Worker.Day, {user, socket, server_id, worker_sup}, [])
   end
 
+  defp do_command "/day7", {user, socket, server_id, worker_sup} do
+    start_command_worker(Revenant.Worker.Day, {user, socket, server_id, worker_sup}, [])
+  end
+
   defp do_command "/help" <> args, {user, socket, server_id, worker_sup} do
     start_command_worker(Revenant.Worker.Help, {user, socket, server_id, worker_sup}, String.split(args))
   end
@@ -66,6 +71,10 @@ defmodule Revenant.CommandHandler do
     start_command_worker(Revenant.Worker.Sethome, {user, socket, server_id, worker_sup}, [])
   end
 
+  defp do_command "/setbase", {user, socket, server_id, worker_sup} do
+    start_command_worker(Revenant.Worker.Sethome, {user, socket, server_id, worker_sup}, [])
+  end
+
   defp do_command "/who", {user, socket, server_id, worker_sup} do
     start_command_worker(Revenant.Worker.Who, {user, socket, server_id, worker_sup}, [])
   end
@@ -76,6 +85,18 @@ defmodule Revenant.CommandHandler do
 
   defp do_command "/zgate" <> args, {user, socket, server_id, worker_sup} do
     start_command_worker(Revenant.Worker.Zgate, {user, socket, server_id, worker_sup}, String.split(args))
+  end
+
+  defp do_command "/wp create" <> args, {user, socket, server_id, worker_sup} do
+    start_command_worker(Revenant.Worker.ZgateCreate, {user, socket, server_id, worker_sup}, String.split(args))
+  end
+
+  defp do_command "/wp" <> args, {user, socket, server_id, worker_sup} do
+    start_command_worker(Revenant.Worker.ZgateCreate, {user, socket, server_id, worker_sup}, String.split(args))
+  end
+
+  defp do_command "/shop" <> args, {user, socket, server_id, worker_sup} do
+    start_command_worker(Revenant.Worker.Shop, {user, socket, server_id, worker_sup}, String.split(args))
   end
 
   defp do_command _command, {"Server", _, _, _} do

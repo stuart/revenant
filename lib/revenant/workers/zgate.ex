@@ -45,7 +45,7 @@ defmodule Revenant.Worker.Zgate do
     :done
   end
 
-  def handle_command(state = %State{args: ["visit", name]}) do
+  def handle_command(state = %State{args: [name | _rest]}) do
     %Player{id: player_id} = Revenant.Query.Player.by_server_and_name(state.server_id, state.user)
 
     do_visit_gate(name, state, player_id)

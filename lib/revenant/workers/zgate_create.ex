@@ -28,14 +28,14 @@ defmodule Revenant.Worker.ZgateCreate do
   end
 
   defp create_gate_message(name) do
-    "[cccccc]Zgate #{name} created."
+    "[cccccc]Waypoint #{name} created."
   end
 
   defp create_gate_error_message(%Ecto.Changeset{errors: [name: {"has already been taken", []}]}, name) do
-    "[ccccff]Zgate with name: #{name} has already been taken."
+    "[ccccff]Waypoint with name: #{name} has already been taken."
   end
 
   defp create_gate_error_message(_, name) do
-    "[ccccff]Zgate #{name} could not be created."
+    "[ccccff]Waypoint #{name} could not be created."
   end
 end

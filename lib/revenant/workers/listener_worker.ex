@@ -10,10 +10,11 @@ end
 # to the game server, which we want to wait for a reply to.
 #
 # handle_command() callback when a message is recieved on one of the streams.
-# It should return :done when it has gotten the message it is interested in and completed it's work.
+# It should return :done when it has gotten the message it is interested in
+# and completed it's work.
 #
-# Listener workers will timeout and die if they do not recieve a message for which handle_command returns
-# :done
+# Listener workers will timeout and die if they do not recieve a message
+# for which handle_command returns :done
 
 defmodule Revenant.Worker.Listener do
   defmacro __using__(_) do
