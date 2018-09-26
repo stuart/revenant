@@ -2,13 +2,13 @@ defmodule Revenant.Schema.Ban do
   use Ecto.Schema
 
   schema "bans" do
-    field :start_time, Ecto.DateTime
+    field :start_time,  :naive_datetime
     field :duration, :integer
     field :reason, :string
 
-    has_one :banned_by, Revenant.Schema.User
-    has_one :server, Revenant.Schema.Server
+    belongs_to :banned_by, Revenant.Schema.User
+    belongs_to :server, Revenant.Schema.Server
 
-    timestamps
+    timestamps()
   end
 end

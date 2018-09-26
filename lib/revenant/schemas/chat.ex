@@ -7,6 +7,6 @@ defmodule Revenant.Schema.Chat do
 
     belongs_to :server, Revenant.Schema.Server
 
-    timestamps
+    timestamps()
   end
 end

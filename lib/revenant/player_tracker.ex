@@ -9,7 +9,7 @@ defmodule Revenant.PlayerTracker do
 
   def init({socket, server_id}) do
     server = Revenant.Repo.get(Revenant.Schema.Server, server_id)
-    Revenant.ServerSocket.register_listener socket, %{mfa: {__MODULE__, :track, [self]}, streams: [:playerinfo]}
+    Revenant.ServerSocket.register_listener socket, %{mfa: {__MODULE__, :track, [self()]}, streams: [:playerinfo]}
     send self(), {:startup_message, socket}
     {:ok, %__MODULE__{server_id: server_id, ping_limit: server.ping_limit}}
   end
@@ -43,7 +43,7 @@ defmodule Revenant.PlayerTracker do
     Revenant.ServerSocket.post socket, "lp"
     pings = kick_high_ping(state.pings, state.ping_limit, socket)
 
-    Process.send_after(self, {:tick, socket}, Application.get_env(:revenant, :player_tracker_interval))
+    Process.send_after(self(), {:tick, socket}, Application.get_env(:revenant, :player_tracker_interval))
     {:noreply, %{state | pings: pings}}
   end
 

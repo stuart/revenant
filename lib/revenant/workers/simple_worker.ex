@@ -21,7 +21,7 @@ defmodule Revenant.Worker.Simple do
       end
 
       def init(state) do
-        GenServer.cast self, :command
+        GenServer.cast self(), :command
         {:ok, state}
       end
 

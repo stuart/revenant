@@ -15,7 +15,7 @@ defmodule Revenant.CommandHandler do
   end
 
   def init({socket, server_id}) do
-    ServerSocket.register_listener socket, %{mfa: {__MODULE__, :command, [self]}, streams: [:chat]}
+    ServerSocket.register_listener socket, %{mfa: {__MODULE__, :command, [self()]}, streams: [:chat]}
     {:ok, worker_sup} = Supervisor.start_link([], strategy: :one_for_one, name: :"worker_sup.#{server_id}")
 
     send self(), :startup_message
@@ -23,7 +23,7 @@ defmodule Revenant.CommandHandler do
   end
 
   def terminate(_, {socket, _, _}) do
-    ServerSocket.deregister_listener socket, %{mfa: {__MODULE__, :command, [self]}, streams: [:chat]}
+    ServerSocket.deregister_listener socket, %{mfa: {__MODULE__, :command, [self()]}, streams: [:chat]}
     :ok
   end
 
@@ -109,6 +109,6 @@ defmodule Revenant.CommandHandler do
 
   defp start_command_worker worker_module, {user, socket, server_id, worker_sup}, args do
     worker_state = %State{user: user, socket: socket, server_id: server_id, args: args}
-    {:ok, _} = Supervisor.start_child(worker_sup, worker(worker_module, [worker_state], [id: make_ref, restart: :transient]))
+    {:ok, _} = Supervisor.start_child(worker_sup, worker(worker_module, [worker_state], [id: make_ref(), restart: :transient]))
   end
 end

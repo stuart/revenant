@@ -9,7 +9,7 @@ defmodule Revenant.LoginTracker do
   end
 
   def init({socket, server_id}) do
-    Revenant.ServerSocket.register_listener socket, %{mfa: {__MODULE__, :track, [self]}, streams: [:connection, :disconnection]}
+    Revenant.ServerSocket.register_listener socket, %{mfa: {__MODULE__, :track, [self()]}, streams: [:connection, :disconnection]}
     Revenant.ServerSocket.say socket, "[REVENANT] Login Tracker started."
     {:ok, %__MODULE__{socket: socket, server_id: server_id}}
   end
@@ -26,11 +26,11 @@ defmodule Revenant.LoginTracker do
           case Revenant.Query.Player.by_server_and_steam_id(state.server_id, steam_id) do
             nil ->
                 Logger.info("New player: #{name}")
-                Process.send_after(self, {:new_player_login, name},
+                Process.send_after(self(), {:new_player_login, name},
                                    Application.get_env(:revenant, :login_message_delay))
             _ ->
                 Logger.info("Returning player #{name}")
-                Process.send_after(self, {:returning_player_login, name},
+                Process.send_after(self(), {:returning_player_login, name},
                                    Application.get_env(:revenant, :login_message_delay))
             end
       {:error, reason} ->

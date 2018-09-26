@@ -8,7 +8,7 @@ defmodule Revenant.InventoryTracker do
   end
 
   def init({socket, server_id}) do
-    Revenant.ServerSocket.register_listener socket, %{mfa: {__MODULE__, :track, [self]}, streams: [:playerinfo, :inventory]}
+    Revenant.ServerSocket.register_listener socket, %{mfa: {__MODULE__, :track, [self()]}, streams: [:playerinfo, :inventory]}
     send self(), {:startup_message, socket}
     {:ok, %__MODULE__{server_id: server_id, socket: socket}}
   end
@@ -32,7 +32,7 @@ defmodule Revenant.InventoryTracker do
   end
 
   def handle_info({:tick, socket}, state) do
-    Process.send_after(self, {:tick, socket}, Application.get_env(:revenant, :inventory_tracker_interval))
+    Process.send_after(self(), {:tick, socket}, Application.get_env(:revenant, :inventory_tracker_interval))
     {:noreply, state}
   end
 

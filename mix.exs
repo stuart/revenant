@@ -7,7 +7,7 @@ defmodule Revenant.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   # Configuration for the OTP application
@@ -28,12 +28,12 @@ defmodule Revenant.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:neotomex, "~>0.1.3"},
+      {:neotomex, "~>0.1.7"},
       {:uuid, "~> 1.1" },
       {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 2.0.0"},
-      {:comeonin, "~> 2.5"},
-      {:geoip, "~> 0.1"}
+      {:ecto, "~> 2.2.0"},
+      {:comeonin, "~> 4.1"},
+      {:geoip, "~> 0.2"}
     ]
   end
 end

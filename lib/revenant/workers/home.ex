@@ -8,21 +8,21 @@ defmodule Revenant.Worker.Home do
       player ->
       case Revenant.Query.Location.home(player.id) do
         nil ->
-          Revenant.ServerSocket.pm socket, user, no_home_message
+          Revenant.ServerSocket.pm socket, user, no_home_message()
         location ->
             halfhourago = (:calendar.datetime_to_gregorian_seconds(:calendar.universal_time) - 1800)
             |> :calendar.gregorian_seconds_to_datetime
           if (Ecto.DateTime.to_erl(location.last_used) < halfhourago) do
             do_teleport(location, user, socket)
           else
-            Revenant.ServerSocket.pm socket, user, to_soon_message
+            Revenant.ServerSocket.pm socket, user, to_soon_message()
           end
       end
     end
   end
 
   defp do_teleport(location, user, socket) do
-    Revenant.ServerSocket.pm socket, user, home_message
+    Revenant.ServerSocket.pm socket, user, home_message()
     Revenant.ServerSocket.post socket, "teleportplayer \"#{user}\" #{round location.x} #{round location.y} #{round location.z}"
     Revenant.Schema.Location.used(location)
   end

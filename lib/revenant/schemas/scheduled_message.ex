@@ -7,7 +7,7 @@ defmodule Revenant.Schema.ScheduledMessage do
     field :repeat_rate, :integer
 
     belongs_to :server, Revenant.Schema.Server
-    timestamps
+    timestamps()
 
   end
 

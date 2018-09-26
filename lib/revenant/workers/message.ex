@@ -8,7 +8,7 @@ defmodule Revenant.Worker.Message do
   end
 
   def init({%ScheduledMessage{message: message, repeat_rate: repeat_rate}, socket}) do
-    :timer.apply_interval(repeat_rate * 1000, GenServer, :cast, [self, :message])
+    :timer.apply_interval(repeat_rate * 1000, GenServer, :cast, [self(), :message])
     {:ok, {message, socket}}
   end
 

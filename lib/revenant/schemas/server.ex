@@ -21,7 +21,7 @@ defmodule Revenant.Schema.Server do
     embeds_one :ip_permissions, Revenant.Schema.Permissions
     embeds_one :country_permissions, Revenant.Schema.Permissions
 
-    timestamps
+    timestamps()
   end
 
   def changeset(server, params \\ %{}) do

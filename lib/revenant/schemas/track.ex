@@ -8,7 +8,7 @@ defmodule Revenant.Schema.Track do
     field :z, :float
     belongs_to :player, Revenant.Schema.Player
 
-    timestamps
+    timestamps()
   end
 
   def changeset(track, params \\ %{}) do

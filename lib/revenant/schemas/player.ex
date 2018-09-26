@@ -5,7 +5,7 @@ defmodule Revenant.Schema.Player do
 
   schema "players" do
     field :name, :string
-    field :last_connected, Ecto.DateTime
+    field :last_connected,  :naive_datetime
     field :hours_played, :float
     field :health, :integer
     field :deaths, :integer
@@ -19,19 +19,19 @@ defmodule Revenant.Schema.Player do
 
     has_many :inventories, Revenant.Schema.Inventory
 
-    timestamps
+    timestamps()
   end
 
   def changeset(player, params \\ %{}) do
     player
-    |> cast(params, allowed_params)
+    |> cast(params, allowed_params())
     |> validate_required([:name, :steam_id, :server_id, :inventories])
     |> unique_constraint(:steam_id, name: :players_steam_id_server_id_index)
   end
 
   def update_changeset(player, params \\ %{}) do
     player
-    |> cast(params, update_params)
+    |> cast(params, update_params())
     |> validate_required([:name, :steam_id, :server_id])
     |> unique_constraint(:steam_id, name: :players_steam_id_server_id_index)
   end
@@ -57,7 +57,7 @@ defmodule Revenant.Schema.Player do
     end
   end
 
-  defp allowed_params do
+  defp allowed_params() do
     [ :name,
       :steam_id,
       :server_id,
@@ -72,7 +72,7 @@ defmodule Revenant.Schema.Player do
     ]
   end
 
-  defp update_params do
+  defp update_params() do
     [ :name,
       :last_connected,
       :hours_played,

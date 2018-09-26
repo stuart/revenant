@@ -6,7 +6,7 @@ defmodule Revenant.ChatLogger do
   end
 
   def init([socket_pid, server_id]) do
-    Revenant.ServerSocket.register_listener socket_pid, %{mfa: {__MODULE__, :log, [self]}, streams: [:chat]}
+    Revenant.ServerSocket.register_listener socket_pid, %{mfa: {__MODULE__, :log, [self()]}, streams: [:chat]}
     send self(), {:startup_message, socket_pid}
     {:ok, server_id}
   end

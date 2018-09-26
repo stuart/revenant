@@ -34,14 +34,14 @@ defmodule Revenant.Worker.Listener do
       end
 
       def init(state) do
-        Revenant.ServerSocket.register_listener state.socket, listener_mfa
+        Revenant.ServerSocket.register_listener state.socket, listener_mfa()
         apply(__MODULE__, :post_request, [state])
-        Process.send_after(self, :timeout, Application.get_env(:revenant, :worker_timeout))
+        Process.send_after(self(), :timeout, Application.get_env(:revenant, :worker_timeout))
         {:ok, state}
       end
 
       def terminate(_,state) do
-        Revenant.ServerSocket.deregister_listener state.socket, listener_mfa
+        Revenant.ServerSocket.deregister_listener state.socket, listener_mfa()
         :ok
       end
 
@@ -62,7 +62,7 @@ defmodule Revenant.Worker.Listener do
       end
 
       def listener_mfa do
-        %{mfa: {__MODULE__, :command, [self]}, streams: apply(__MODULE__, :streams, [])}
+        %{mfa: {__MODULE__, :command, [self()]}, streams: apply(__MODULE__, :streams, [])}
       end
     end
   end

@@ -11,17 +11,17 @@ defmodule Revenant.Schema.Location do
     field :description, :string
     field :public, :boolean, default: false
     field :zgate, :boolean, default: false
-    field :last_used, Ecto.DateTime, default: Ecto.DateTime.cast!("2000-01-01T00:00:00Z")
+    field :last_used,  :naive_datetime, default: Ecto.DateTime.cast!("2000-01-01T00:00:00Z")
 
     belongs_to :server, Revenant.Schema.Server
     belongs_to :player, Revenant.Schema.Player
 
-    timestamps
+    timestamps()
   end
 
   def changeset(location, params \\ %{}) do
     location
-    |> cast(params, allowed_params)
+    |> cast(params, allowed_params())
     |> validate_required([:name, :x, :y, :z, :server_id, :last_used])
     |> unique_constraint(:name, name: :locations_name_server_id_index)
   end
@@ -70,7 +70,7 @@ defmodule Revenant.Schema.Location do
     {:ok, _} = Revenant.Repo.update(cs)
   end
 
-  defp allowed_params do
+  defp allowed_params() do
     [:name, :x, :y, :z, :server_id, :player_id, :radius, :description, :public, :last_used, :zgate]
   end
 end
